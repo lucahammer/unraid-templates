@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>gotosocial</Name>
+  <Repository>superseriousbusiness/gotosocial:latest</Repository>
+  <Registry>https://hub.docker.com/r/superseriousbusiness/gotosocial/</Registry>
+  <Beta>true</Beta>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/superseriousbusiness/gotosocial/issues</Support>
+  <Project>https://gotosocial.org/</Project>
+  <Overview>GoToSocial is an ActivityPub social network server, written in Golang.&#xD;
+&#xD;
+With GoToSocial, you can keep in touch with your friends, post, read, and share images and articles. All without being tracked or advertised to!&#xD;
+&#xD;
+GoToSocial provides a lightweight, customizable, and safety-focused entryway into the Fediverse, and is comparable to (but distinct from) existing projects such as Mastodon, Pleroma, Friendica, and PixelFed.&#xD;
+&#xD;
+More info and variables: https://docs.gotosocial.org/en/latest/installation_guide/docker/&#xD;
+&#xD;
+Use console to add user:&#xD;
+/gotosocial/gotosocial admin account create --username some_username --email someone@example.org --password 'some_very_good_password'</Overview>
+  <Category>Other:</Category>
+  <WebUI/>
+  <TemplateURL></TemplateURL>
+  <Icon>https://gotosocial.org/assets/logo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <DonateText>Donate to GoToSocial</DonateText>
+  <DonateLink>https://github.com/superseriousbusiness/gotosocial#sponsorship--funding</DonateLink>
+  <Requires/>
+  <Config Name="Port" Target="8080" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Hostname" Target="GTS_HOST" Default="localhost" Mode="" Description="Hostname that this server will be reachable at. DO NOT change this after your server has already run once, or you will break things!&#13;&#10;&#13;&#10;Example: gts.example.org" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Database address" Target="GTS_DB_ADDRESS" Default="" Mode="" Description="For Postgres, this should be the address or socket at which the database can be reached." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Database port" Target="GTS_DB_PORT" Default="5432" Mode="" Description="Default: 5432" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Database user" Target="GTS_DB_USER" Default="gotosocial" Mode="" Description="Default: gotosocial" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Database password" Target="GTS_DB_PASSWORD" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="true"></Config>
+  <Config Name="Database" Target="GTS_DB_DATABASE" Default="gotosocial" Mode="" Description="Name of the database. Default: gotosocial" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Accounts registration open" Target="GTS_ACCOUNTS_REGISTRATION_OPEN" Default="true" Description="Do we want people to be able to just submit sign up requests, or do we want invite only?" Mode="" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Accounts approval required" Target="GTS_ACCOUNTS_APPROVAL_REQUIRED" Default="true" Description="Do sign up requests require approval from an admin/moderator before an account can sign in/use the server?" Mode="" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Accounts reason required" Target="GTS_ACCOUNTS_REASON_REQUIRED" Default="true" Description="Are sign up requests required to submit a reason for the request (eg., an explanation of why they want to join the instance)?" Mode="" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Landingpage user" Target="GTS_LANDING_PAGE_USER" Default="" Description="Optional. If the landing page should redirect to an account, set this to the accountname." Mode="" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Account hostname" Target="GTS_ACCOUNT_DOMAIN" Default="" Description="Domain to use when federating profiles. This is useful when you want your server to be at eg., gts.example.org, but you want the domain on accounts to be name@example.org because it looks better or is just shorter/easier to remember. Needs webfinger redirect!" Mode="" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Protocol" Target="GTS_PROTOCOL" Default="https" Description="This should be the protocol part of the URI that your server is actually reachable on. So even if you're running GoToSocial behind a reverse proxy that handles SSL certificates for you, instead of using built-in letsencrypt, it should still be https." Mode="" Type="Variable" Display="advanced" Required="false" Mask="false">
+  </Config>
+  <Config Name="Trusted proxies" Target="GTS_TRUSTED_PROXIES" Default="['127.0.0.1/32', '::1']" Description="CIDRs or IP addresses of proxies that should be trusted when determining real client IP from behind a reverse proxy. If you're running inside a Docker container behind Traefik or Nginx, for example, add the subnet of your docker network, or the gateway of the docker network, and/or the address of the reverse proxy (if it's not running on the host network)." Mode="" Type="Variable" Display="advanced" Required="false" Mask="false">
+  </Config>
+  <Config Name="SMTP host" Target="GTS_SMTP_HOST" Default="" Description="The hostname of the smtp server you want to use." Mode="" Type="Variable" Display="advanced" Required="false" Mask="false">
+  </Config>
+  <Config Name="SMTP port" Target="GTS_SMTP_PORT" Default="" Description="" Mode="" Type="Variable" Display="advanced" Required="false" Mask="false">
+  </Config>
+  <Config Name="SMTP username" Target="GTS_SMTP_USERNAME" Default="" Description="" Mode="" Type="Variable" Display="advanced" Required="false" Mask="false">
+  </Config>
+  <Config Name="SMTP password" Target="GTS_SMTP_PASSWORD" Default="" Description="" Mode="" Type="Variable" Display="advanced" Required="false" Mask="false">
+  </Config>
+  <Config Name="SMTP from" Target="GTS_SMTP_FROM" Default="" Description="" Mode="" Type="Variable" Display="advanced" Required="false" Mask="false">
+  </Config>
+  <Config Name="Let's encrypt" Target="GTS_LETSENCRYPT_ENABLE" Default="false" Description="Whether or not letsencrypt should be enabled for the server." Mode="" Type="Variable" Display="advanced" Required="false" Mask="false">
+  </Config>
+  <Config Name="Let's encrypt port" Target="GTS_LETSENCRYPT_PORT" Default="80" Description="Whether or not letsencrypt should be enabled for the server." Mode="" Type="Variable" Display="advanced" Required="false" Mask="false">
+  </Config>
+  </Config>
+  <Config Name="Let's encrypt email address" Target="GTS_LETSENCRYPT_EMAIL_ADDRESS" Default="" Description="Email address to use when registering LetsEncrypt certs." Mode="" Type="Variable" Display="advanced" Required="false" Mask="false">
+  </Config>
+  <Config Name="Log level" Target="GTS_LOG_LEVEL" Default="info" Description="Options: trace, debug, info, wanr, error, fatal" Mode="" Type="Variable" Display="advanced" Required="false" Mask="false">
+  </Config>
+  <Config Name="Log database queries" Target="GTS_LOG_DB_QUERIES" Default="false" Description="Log database queries when log-level is set to debug or trace." Mode="" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Instance exposte peers" Target="GTS_INSTANCE_EXPOSE_PEERS" Default="false" Description="Allow unauthenticated users to make queries to /api/v1/instance/peers?filter=open in order to see a list of instances that this instance 'peers' with. Even if set to 'false', then authenticated users (members of the instance) will still be able to query the endpoint." Mode="" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Instance exposte suspended" Target="GTS_INSTANCE_EXPOSE_SUSPENDED" Default="false" Description="Allow unauthenticated users to make queries to /api/v1/instance/peers?filter=suspended in order to see a list of instances that this instance blocks/suspends." Mode="" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Instance exposte public timeline" Target="GTS_INSTANCE_EXPOSE_PUBLIC_TIMELINE" Default="false" Description=" Allow unauthenticated users to make queries to /api/v1/timelines/public in order to see a list of public posts on this server" Mode="" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Instance delive to shared inboxes " Target="GTS_INSTANCE_DELIVER_TO_SHARED_INSTANCES" Default="true" Description="This flag tweaks whether GoToSocial will deliver ActivityPub messages to the shared inbox of a recipient, if one is available, instead of delivering each message to each actor who should receive a message individually. Shared inbox delivery can significantly reduce network load when delivering to multiple recipients share an inbox (eg., on large Mastodon instances)." Mode="" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+</Container>
