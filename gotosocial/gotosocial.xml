@@ -7,7 +7,7 @@
 	<Network>bridge</Network>
 	<Shell>sh</Shell>
 	<Privileged>false</Privileged>
-	<Support>https://github.com/superseriousbusiness/gotosocial/issues</Support>
+	<Support>https://forums.unraid.net/topic/131008-support-gotosocial/</Support>
 	<Project>https://gotosocial.org/</Project>
 	<Overview>GoToSocial is an ActivityPub social network server, written in Golang.&#xD;
 &#xD;
