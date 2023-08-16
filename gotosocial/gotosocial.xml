@@ -23,13 +23,14 @@ Use console to add user:&#xD;
 	<WebUI/>
 	<TemplateURL>https://raw.githubusercontent.com/lucahammer/unraid-templates/main/gotosocial/gotosocial.xml</TemplateURL>
 	<Icon>https://gotosocial.org/assets/logo.png</Icon>
-	<ExtraParams/>
+	<ExtraParams>--user 99:100</ExtraParams>
 	<PostArgs/>
 	<DonateText>Donate to GoToSocial</DonateText>
 	<DonateLink>https://github.com/superseriousbusiness/gotosocial#sponsorship--funding</DonateLink>
 	<Requires/>
 	<Config Name="Port" Target="8080" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false"></Config>
 	<Config Name="Hostname" Target="GTS_HOST" Default="localhost" Mode="" Description="Hostname that this server will be reachable at. DO NOT change this after your server has already run once, or you will break things!&#13;&#10;&#13;&#10;Example: gts.example.org" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+	<Config Name="Data" Target="/gotosocial/storage" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/riskycache/appdata/gotosocial/storage</Config>
 	<Config Name="Database address" Target="GTS_DB_ADDRESS" Default="" Mode="" Description="For Postgres, this should be the address or socket at which the database can be reached." Type="Variable" Display="always" Required="false" Mask="false"></Config>
 	<Config Name="Database port" Target="GTS_DB_PORT" Default="5432" Mode="" Description="Default: 5432" Type="Variable" Display="always" Required="false" Mask="false"></Config>
 	<Config Name="Database user" Target="GTS_DB_USER" Default="gotosocial" Mode="" Description="Default: gotosocial" Type="Variable" Display="always" Required="false" Mask="false"></Config>
